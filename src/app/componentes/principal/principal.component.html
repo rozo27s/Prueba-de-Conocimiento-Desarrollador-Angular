@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="btn-group-justified">
+      <div class="btn-group">
+          <button type="button" class="btn btn-success " data-toggle="dropdown">
+          Usiarios<span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li><li ><a [routerLink]="['/rusuario']" >Registrar nuevo usuario</a></li>
+          </ul>
+        </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary" data-toggle="dropdown">
+          Productos<span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a [routerLink]="['/rproducto']">Registrar nuevo producto</a></li>
+            <li><a [routerLink]="['/lproducto']">Buscar producto</a></li>
+          </ul>
+        </div>
+    </div>
+</div>

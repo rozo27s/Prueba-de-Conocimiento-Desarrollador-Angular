@@ -1,0 +1,45 @@
+<div class="container align-content-center">
+  <h4>Nuevo usuario</h4>
+  <span class="label label-success" *ngIf="guardado">Usuario guardado</span>
+  <span class="label label-danger" *ngIf="!noguardado">Usuario no guardado verifique los datos ingresados</span>
+</div>
+<form name="myForm">
+          <div class="container">
+              <div class="form-group">
+                  <label>Mombres</label>
+                  <input #innombre type="text" name="nombre" ng-model="nombre" class="form-control" placeholder="Nombres"  required/>
+              </div>
+
+              <div class="form-group">
+                  <label>Apellidos</label>
+                  <input #inApellidos type="text" name="Apellido" class="form-control" placeholder="Apellidos" data-validacion-tipo="requerido|max:50"
+                  />
+              </div>
+              <div class="form-group">
+                <label>Usuario</label>
+                <input #inUsuario type="text" name="Usuario" class="form-control" placeholder="Ingrese un año" data-validacion-tipo="requerido|max:50"
+                />
+            </div>
+            <div class="form-group">
+              <label>Edad</label>
+              <input #inEdad type="number" name="EdadIn" class="form-control" placeholder="Ingrese la edad" data-validacion-tipo="requerido|max:50"
+              />
+          </div>
+
+            <div class="form-group">
+              <label>Fecha de ingreso</label>
+              <input #infechaIn type="date" name="FechaIn" class="form-control" placeholder="Ingrese la fecha de ingreso" data-date-format="DD MMMM YYYY" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" data-validacion-tipo="requerido|max:50"
+              required/>
+          </div>
+
+              <div class="form-group">
+                  <label>Cargo</label>
+                  <select #inSelectIdCargo name="Sexo[]" class="form-control"  required>
+                      <option value="0">Seleccione</option>
+                      <option *ngFor="let cargo of cargos" value={{cargo.idCargo}}>{{cargo.nombreCargo}}</option>
+                  </select>
+              </div>
+          </div>
+</form>
+<div class="container align-content-center"><button (click)="guardarUsuario(innombre,inApellidos,inUsuario,inEdad,infechaIn,inSelectIdCargo)" class="btn btn-success btn-lg btn-block">Guardar</button></div>
+
